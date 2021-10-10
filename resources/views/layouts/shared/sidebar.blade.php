@@ -31,10 +31,16 @@
 
                 <div class="dropdown-divider"></div>
 
-                <a href="/pages-logout" class="dropdown-item notify-item">
+                <a href="{{route('logout') }}" 
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit()";
+                class="dropdown-item notify-item">
                     <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
                     <span>Logout</span>
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
     </div>
