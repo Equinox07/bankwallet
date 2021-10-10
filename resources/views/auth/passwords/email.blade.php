@@ -11,8 +11,7 @@
                             <div class="col-6 p-5">
                                 <div class="mx-auto mb-5">
                                     <a href="/">
-                                        <img src="/assets/images/logo.png" alt="" height="24" />
-                                        <h3 class="d-inline align-middle ml-1 text-logo">Shreyu</h3>
+                                        <img src="/assets/images/walletlogo.jpg" alt="" height="24" />
                                     </a>
                                 </div>
 
@@ -41,7 +40,7 @@
                                             </div>
                                             <input type="email" name="email"
                                                 class="form-control @if($errors->has('email')) is-invalid @endif"
-                                                id="email" placeholder="hello@coderthemes.com" />
+                                                id="email" placeholder="hello@email.com" />
 
                                             @if($errors->has('email'))
                                             <span class="invalid-feedback" role="alert">
@@ -59,12 +58,7 @@
                             <div class="col-lg-6 d-none d-md-inline-block">
                                 <div class="auth-page-sidebar">
                                     <div class="overlay"></div>
-                                    <div class="auth-user-testimonial">
-                                        <p class="font-size-24 font-weight-bold text-white mb-1">I simply love it!</p>
-                                        <p class="lead">"It's a elegent templete. I love it very much!"</i>
-                                        </p>
-                                        <p>- Admin User</p>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

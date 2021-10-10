@@ -4,11 +4,10 @@
         <!-- LOGO -->
         <a href="/" class="navbar-brand mr-0 mr-md-2 logo">
             <span class="logo-lg">
-                <img src="{{ URL::asset('assets/images/logo.png') }}" alt="" height="24" />
-                <span class="d-inline h5 ml-1 text-logo">Shreyu</span>
+                <img src="{{ URL::asset('assets/images/walletlogo.jpg') }}" alt="" height="14" />
             </span>
             <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo.png') }}" alt="" height="24">
+                <img src="{{ URL::asset('assets/images/walletlogo.jpg') }}" alt="" height="24">
             </span>
         </a>
 
