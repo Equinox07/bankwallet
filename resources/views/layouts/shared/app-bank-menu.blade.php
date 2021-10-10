@@ -8,10 +8,21 @@
         </a>
     </li>
     <li class="menu-title">Apps</li>
+
     <li>
-        <a href="/apps/calendar">
+        <a href="javascript: void(0);">
             <span> Customers </span>
+            <span class="menu-arrow"></span>
         </a>
+
+        <ul class="nav-second-level" aria-expanded="false">
+            <li>
+                <a href="#">Open Account</a>
+            </li>
+            <li>
+                <a href="#">Cusomer Information</a>
+            </li>
+        </ul>
     </li>
     <li>
         <a href="javascript: void(0);">
@@ -21,13 +32,13 @@
 
         <ul class="nav-second-level" aria-expanded="false">
             <li>
-                <a href="/apps/email/inbox">Inbox</a>
+                <a href="#">Live Updates</a>
             </li>
             <li>
-                <a href="/apps/email/read">Read</a>
+                <a href="#">Deposits</a>
             </li>
             <li>
-                <a href="/apps/email/compose">Compose</a>
+                <a href="#">Withdrawals</a>
             </li>
         </ul>
     </li>
@@ -40,10 +51,22 @@
     
         <ul class="nav-second-level" aria-expanded="false">
             <li>
-                <a href="/apps/project/list">List</a>
+                <a href="#">Income Account</a>
             </li>
             <li>
-                <a href="/apps/project/detail">Detail</a>
+                <a href="#">Expense Account</a>
+            </li>
+            <li>
+                <a href="#">Assets Account</a>
+            </li>
+            <li>
+                <a href="#">Liability Account</a>
+            </li>
+            <li>
+                <a href="#">Statement</a>
+            </li>
+            <li>
+                <a href="#">Open/ Close AC</a>
             </li>
         </ul>
     </li>
@@ -58,28 +81,31 @@
         </a>
         <ul class="nav-second-level" aria-expanded="false">
             <li>
-                <a href="/ui/bootstrap">Bootstrap UI</a>
+                <a href="#">Individual Account</a>
             </li>
             <li>
-                <a href="javascript: void(0);" aria-expanded="false">Icons
+                <a href="#">Group Account</a>
+            </li>
+            <li>
+                <a href="#">Penalty</a>
+            </li>
+            <li>
+                <a href="javascript: void(0);" aria-expanded="false">Due Advance
                     <span class="menu-arrow"></span>
                 </a>
                 <ul class="nav-third-level" aria-expanded="false">
                     <li>
-                        <a href="/ui/icons-feather">Feather Icons</a>
+                        <a href="#">Due Today</a>
                     </li>
                     <li>
-                        <a href="/ui/icons-unicons">Unicons Icons</a>
+                        <a href="#">Due this Month</a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a href="/ui/widgets">Widgets</a>
             </li>
         </ul>
     </li>
 
-    <li>
+    {{--  <li>
         <a href="javascript: void(0);">
             <i data-feather="package"></i>
             <span> Investments </span>
@@ -106,9 +132,9 @@
                 <a href="/ui/widgets">Widgets</a>
             </li>
         </ul>
-    </li>
+    </li>  --}}
 
-    <li>
+    {{--  <li>
         <a href="javascript: void(0);">
             <i data-feather="package"></i>
             <span> Reports </span>
@@ -136,9 +162,9 @@
             </li>
         </ul>
 
-    </li>
+    </li>  --}}
 
-    <li>
+    {{--  <li>
         <a href="javascript: void(0);">
             <i data-feather="package"></i>
             <span> Vault </span>
@@ -166,7 +192,7 @@
             </li>
         </ul>
 
-    </li>
+    </li>  --}}
 
     <li>
         <a href="javascript: void(0);">
@@ -176,28 +202,25 @@
         </a>
         <ul class="nav-second-level" aria-expanded="false">
             <li>
-                <a href="/ui/bootstrap">Bootstrap UI</a>
+                <a href="#">My Banks</a>
             </li>
             <li>
-                <a href="javascript: void(0);" aria-expanded="false">Icons
+                <a href="javascript: void(0);" aria-expanded="false">Staff
                     <span class="menu-arrow"></span>
                 </a>
                 <ul class="nav-third-level" aria-expanded="false">
                     <li>
-                        <a href="/ui/icons-feather">Feather Icons</a>
+                        <a href="#">Registration</a>
                     </li>
                     <li>
-                        <a href="/ui/icons-unicons">Unicons Icons</a>
+                        <a href="#">Preview Staff</a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a href="/ui/widgets">Widgets</a>
             </li>
         </ul>
     </li>
 
-    <li>
+    {{--  <li>
         <a href="javascript: void(0);">
             <i data-feather="package"></i>
             <span> Help and Others </span>
@@ -224,6 +247,6 @@
                 <a href="/ui/widgets">Widgets</a>
             </li>
         </ul>
-    </li>
+    </li>  --}}
 
 </ul>
