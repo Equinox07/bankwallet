@@ -6,6 +6,8 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use Keygen\Keygen;
 use App\Models\Account;
+use App\Models\AccountOption;
+use App\Models\User;
 
 class AccountOptionSeeder extends Seeder
 {
@@ -16,7 +18,36 @@ class AccountOptionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = [
+            [
+                'name' => "Personal Account",
+                "type" => "personal",
+            ],
+            [
+                'name' => "Business Account",
+                "type" => "business",
+            ],
+            [
+                'name' => "Joint Account",
+                "type" => "joint",
+            ],
+            [
+                'name' => "Group Account",
+                "type" => "group",
+            ],
+
+        ];
+
+
+        foreach ($users as $user) {
+            $user = AccountOption::firstOrCreate(
+                ['name' => $user['name']],
+                [
+                    'name' => $user['name'],
+                    "type" => $user["type"],
+                ]
+            );
+        }
     }
 
 

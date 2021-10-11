@@ -49,12 +49,12 @@
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Active Users</span>
-                        <h2 class="mb-0">$2189</h2>
+                        <h2 class="mb-0">0</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-revenue-chart" class="apex-charts"></div>
                         <span class="text-success font-weight-bold font-size-13"><i class='uil uil-arrow-up'></i>
-                            10.21%</span>
+                            0</span>
                     </div>
                 </div>
             </div>
@@ -67,12 +67,12 @@
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">In-Active Users</span>
-                        <h2 class="mb-0">1065</h2>
+                        <h2 class="mb-0">0</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-product-sold-chart" class="apex-charts"></div>
                         <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            5.05%</span>
+                            0</span>
                     </div>
                 </div>
             </div>
@@ -86,12 +86,12 @@
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">New
                             Customers</span>
-                        <h2 class="mb-0">11</h2>
+                        <h2 class="mb-0">0</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-new-customer-chart" class="apex-charts"></div>
                         <span class="text-success font-weight-bold font-size-13"><i class='uil uil-arrow-up'></i>
-                            25.16%</span>
+                            0</span>
                     </div>
                 </div>
             </div>
@@ -104,12 +104,12 @@
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Pending Requests</span>
-                        <h2 class="mb-0">750</h2>
+                        <h2 class="mb-0">0</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-new-visitors-chart" class="apex-charts"></div>
                         <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            5.05%</span>
+                            0</span>
                     </div>
                 </div>
             </div>
@@ -123,12 +123,12 @@
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Loan Request</span>
-                        <h2 class="mb-0">750</h2>
+                        <h2 class="mb-0">0</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-new-visitors-chart" class="apex-charts"></div>
                         <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            5.05%</span>
+                            0</span>
                     </div>
                 </div>
             </div>
@@ -142,12 +142,12 @@
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Withdraw Request</span>
-                        <h2 class="mb-0">750</h2>
+                        <h2 class="mb-0">0</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-new-visitors-chart" class="apex-charts"></div>
                         <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            5.05%</span>
+                            0</span>
                     </div>
                 </div>
             </div>
@@ -160,12 +160,12 @@
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Deposit Request</span>
-                        <h2 class="mb-0">750</h2>
+                        <h2 class="mb-0">0</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-new-visitors-chart" class="apex-charts"></div>
                         <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            5.05%</span>
+                            0</span>
                     </div>
                 </div>
             </div>
