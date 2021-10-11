@@ -17,7 +17,7 @@
 
         <ul class="nav-second-level" aria-expanded="false">
             <li>
-                <a href="#">Open Account</a>
+                <a href="/account/open">Open Account</a>
             </li>
             <li>
                 <a href="#">Cusomer Information</a>

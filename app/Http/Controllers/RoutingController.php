@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RoutingController extends Controller
 {
@@ -14,6 +15,17 @@ class RoutingController extends Controller
     public function index()
     {
         return view('dashboard');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function openAccount()
+    {
+        return view('pages.accounts.open');
     }
 
     /**
