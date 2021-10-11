@@ -8,7 +8,7 @@
 @section('breadcrumb')
 <div class="row page-title align-items-center">
     <div class="col-sm-4 col-xl-6">
-        <h4 class="mb-1 mt-0">Dashboard</h4>
+        <h4 class="mb-1 mt-0">User Accounts</h4>
     </div>
     <div class="col-sm-8 col-xl-6">
         <form class="form-inline float-sm-right mt-3 mt-sm-0">
@@ -49,7 +49,7 @@
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Active Users</span>
-                        <h2 class="mb-0">0</h2>
+                        <h2 class="mb-0">{{$activeAccountCount}}</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-revenue-chart" class="apex-charts"></div>
@@ -86,7 +86,7 @@
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">New
                             Customers</span>
-                        <h2 class="mb-0">0</h2>
+                        <h2 class="mb-0">{{$newCustomersCount}}</h2>
                     </div>
                     <div class="align-self-center">
                         <div id="today-new-customer-chart" class="apex-charts"></div>
@@ -115,62 +115,6 @@
             </div>
         </div>
     </div>
-
-
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
-            <div class="card-body p-0">
-                <div class="media p-3">
-                    <div class="media-body">
-                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Loan Request</span>
-                        <h2 class="mb-0">0</h2>
-                    </div>
-                    <div class="align-self-center">
-                        <div id="today-new-visitors-chart" class="apex-charts"></div>
-                        <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
-            <div class="card-body p-0">
-                <div class="media p-3">
-                    <div class="media-body">
-                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Withdraw Request</span>
-                        <h2 class="mb-0">0</h2>
-                    </div>
-                    <div class="align-self-center">
-                        <div id="today-new-visitors-chart" class="apex-charts"></div>
-                        <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
-            <div class="card-body p-0">
-                <div class="media p-3">
-                    <div class="media-body">
-                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Deposit Request</span>
-                        <h2 class="mb-0">0</h2>
-                    </div>
-                    <div class="align-self-center">
-                        <div id="today-new-visitors-chart" class="apex-charts"></div>
-                        <span class="text-danger font-weight-bold font-size-13"><i class='uil uil-arrow-down'></i>
-                            0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- stats + charts -->
@@ -184,37 +128,41 @@
                 <a href="" class="btn btn-primary btn-sm float-right">
                     <i class='uil uil-export ml-1'></i> Export
                 </a>
-                <h5 class="card-title mt-0 mb-0 header-title">Recent Transactions</h5>
+                <h5 class="card-title mt-0 mb-0 header-title">Customer Account</h5>
 
                 <div class="table-responsive mt-4">
                     <table class="table table-hover table-nowrap mb-0">
                         <thead>
                             <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">Currency</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">Grand Total</th>
-                                <th scope="col">Charge</th>
-                                <th scope="col">DR/CR</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Method</th>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Customer Phone</th>
+                                <th scope="col">Account Number</th>
+                                <th scope="col">Account Option</th>
+                                <th scope="col">Account Type</th>
+                                <th scope="col">Branch</th>
+                                <th scope="col">Created By</th>
+                                <th scope="col">Approved</th>
+                                <th scope="col">Date Created</th>
                                 <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{--  <tr>
-                                <td>#98753</td>
-                                <td>Marco Lightweight Shirt</td>
-                                <td>Mark P</td>
-                                <td>$125.49</td>
-                                <td>Mark P</td>
-                                <td>Mark P</td>
-                                <td>$125.49</td>
-                                <td>$125.49</td>
-                                <td><span class="badge badge-soft-success py-1">Delivered</span>
-                                </td>
-                            </tr>
-          --}}
+                            @foreach ($accounts as $account)
+                                <tr>
+                                    <td>{{$account->customer->name}}</td>
+                                    <td>{{$account->customer->phone}}</td>
+                                    <td>{{$account->account_number}}</td>
+                                    <td>{{$account->accountOption->name}}</td>
+                                    <td>{{$account->accountType->name}}</td>
+                                    <td>{{$account->customer->branch->name}}</td>
+                                    <td>{{$account->customer->creator->name ?? 'N/A'}}</td>
+                                    <td>{{$account->customer->approved->name ?? 'N/A'}}</td>
+                                    <td>{{$account->created_at->format('Y-m-d')}}</td>
+                                    <td><span class="badge badge-soft-success py-1">Active</span>
+                                    </td>
+                                </tr>
+                            @endforeach
+        
                         </tbody>
                     </table>
                 </div> <!-- end table-responsive-->

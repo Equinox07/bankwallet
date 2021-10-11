@@ -9,6 +9,7 @@ use App\Models\AccountType;
 use App\Models\Branch;
 use App\Models\Country;
 use App\Models\Currency;
+use App\Models\Customer;
 use App\Models\IdType;
 use App\Models\User;
 
@@ -21,7 +22,9 @@ class RoutingController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $customers = Customer::all();
+
+        return view('dashboard', compact('customers'));
     }
 
 

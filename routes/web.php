@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dasboard', [RoutingController::class,'index'])->name('account.dashboard');
     Route::get('/account/open', [RoutingController::class,'openAccount']);
     Route::post('/account/open', [AccountController::class,'store'])->name('open.account');
+    Route::get('/account/users', [AccountController::class,'index'])->name('account.users');
     Route::get('/staff/add', [RoutingController::class,'addStaff']);
     Route::get('{first}/{second}/{third}', [RoutingController::class,'thirdLevel']);
     Route::get('{first}/{second}', [RoutingController::class,'secondLevel']);

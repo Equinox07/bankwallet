@@ -11,6 +11,7 @@ use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\AccountType;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -26,7 +27,11 @@ class AccountController extends Controller
      */
     public function index()
     {
-        //
+        $accounts = Account::all();
+
+        $activeAccountCount = Customer::count();
+        $newCustomersCount = Customer::whereDate('created_at', today())->count();
+        return view('pages.customers.index', compact('accounts', 'activeAccountCount', 'newCustomersCount'));
     }
 
     /**
@@ -49,6 +54,7 @@ class AccountController extends Controller
     {
         $role = Role::findByName('Customer');
         $request['password'] = Hash::make(12345678);
+        $request['created_by'] = Auth::user()->id;
         $accountData = $request->only(['account_type_id', 'account_option_id']);
         $customerData = $request->except(['account_type_id', 'account_option_id']);
 
@@ -64,7 +70,7 @@ class AccountController extends Controller
             'account_type_id' =>  $request->account_type_id,
         ]);
 
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/account/users');
     }
 
     /**

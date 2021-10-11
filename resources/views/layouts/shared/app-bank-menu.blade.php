@@ -20,6 +20,9 @@
                 <a href="/account/open">Open Account</a>
             </li>
             <li>
+                <a href="/account/users">Customer Accounts</a>
+            </li>
+            <li>
                 <a href="#">Cusomer Information</a>
             </li>
         </ul>
@@ -105,7 +108,7 @@
         </ul>
     </li>
 
-    {{--  <li>
+    <li>
         <a href="javascript: void(0);">
             <i data-feather="package"></i>
             <span> Investments </span>
@@ -113,26 +116,29 @@
         </a>
         <ul class="nav-second-level" aria-expanded="false">
             <li>
-                <a href="/ui/bootstrap">Bootstrap UI</a>
+                <a href="#">Process Investment</a>
             </li>
             <li>
+                <a href="#">Repay Investment</a>
+            </li>
+            <li>
+                <a href="#">Re- Invest Funds</a>
+            </li>
+            {{--  <li>
                 <a href="javascript: void(0);" aria-expanded="false">Icons
                     <span class="menu-arrow"></span>
                 </a>
                 <ul class="nav-third-level" aria-expanded="false">
                     <li>
-                        <a href="/ui/icons-feather">Feather Icons</a>
+                        <a href="#">Feather Icons</a>
                     </li>
                     <li>
-                        <a href="/ui/icons-unicons">Unicons Icons</a>
+                        <a href="#">Unicons Icons</a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a href="/ui/widgets">Widgets</a>
-            </li>
+            </li>  --}}
         </ul>
-    </li>  --}}
+    </li>
 
     {{--  <li>
         <a href="javascript: void(0);">
