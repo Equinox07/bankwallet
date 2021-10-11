@@ -29,7 +29,8 @@
 @endsection
 
 @section('content')
-<form class="needs-validation" novalidate>
+<form class="needs-validation" method="POST" action="{{route('open.account')}}" novalidate>
+    @csrf
 <div class="row">
     <div class="col-lg-6">
         <div class="card">
@@ -47,7 +48,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Account Type</label>
-                        <select data-plugin="customselect" class="form-control" name="account_option_id">
+                        <select data-plugin="customselect" class="form-control" name="account_type_id">
                             @foreach ($accountTypes as $item)
                                 <option value="{{$item->id}}">{{$item->name}}</option>
                             @endforeach
@@ -77,7 +78,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Date of Birth</label>
-                        <input type="text" name="dob" class="form-control" id="validationCustom02" placeholder="Date of Birth"
+                        <input type="date" name="dob" class="form-control" id="validationCustom02" placeholder="Date of Birth"
                             required>
                         <div class="valid-feedback">
                             Looks good!
@@ -167,8 +168,8 @@
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Currency</label>
                         <select data-plugin="customselect" class="form-control" name="currency_id">
-                            @foreach ($countries as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @foreach ($currencies as $item)
+                                <option value="{{$item->id}}">{{$item->short_code}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -186,7 +187,7 @@
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Employer Name</label>
                         <input type="text" class="form-control" id="validationCustom01" placeholder="Employer name"
-                        required>
+                        >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -194,7 +195,7 @@
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Occupation</label>
                         <input type="text" class="form-control" id="validationCustom02" placeholder="Occupation"
-                            required>
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -202,7 +203,7 @@
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Income</label>
                         <input type="text" class="form-control" id="validationCustom02" placeholder="Income"
-                            required>
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -212,8 +213,8 @@
                     <h4 class="header-title mt-0 mb-1">Next of Kin Information</h4>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Name of Next of Kin</label>
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Name of Next of Kin"
-                            required>
+                        <input type="text" name="next_of_kin_name" class="form-control" id="validationCustom02" placeholder="Name of Next of Kin"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -221,8 +222,8 @@
 
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Relationship with Next of Kin</label>
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Relationship with Next of Kin"
-                            required>
+                        <input type="text" name="next_of_kin_relationship" class="form-control" id="validationCustom02" placeholder="Relationship with Next of Kin"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -230,8 +231,8 @@
 
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Contact of Next of Kin</label>
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Contact of Next of Kin"
-                            required>
+                        <input type="text" name="next_of_kin_contact" class="form-control" id="validationCustom02" placeholder="Contact of Next of Kin"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -239,8 +240,8 @@
 
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Address of Next of Kin</label>
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Address of Next of Kin"
-                            required>
+                        <input type="text" name="next_of_kin_address" class="form-control" id="validationCustom02" placeholder="Address of Next of Kin"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -249,8 +250,8 @@
                     <h4 class="header-title mt-0 mb-1">Daily Susu Contribution</h4>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Daily Contribution Amount(optional)</label>
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Enter Customer Dail Contribution"
-                            required>
+                        <input type="text" name="daily_contribution_amount" class="form-control" id="validationCustom02" placeholder="Enter Customer Dail Contribution"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -259,8 +260,8 @@
                     <h4 class="header-title mt-0 mb-1">Identity Documents</h4>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">National ID Card [Passport, Voter, NHIS, Ghana Card, Driving License]</label>
-                        <input type="file" class="form-control" id="validationCustom02" placeholder="National ID Card"
-                            required>
+                        <input type="file" name="national_id" class="form-control" id="validationCustom02" placeholder="National ID Card"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -269,8 +270,8 @@
 
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Passport Picure</label>
-                        <input type="file" class="form-control" id="validationCustom02" placeholder="Passport Picure"
-                            required>
+                        <input type="file" name="passport" class="form-control" id="validationCustom02" placeholder="Passport Picure"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -278,8 +279,8 @@
 
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Utility Bill [Water, Telephone or Electricity]</label>
-                        <input type="file" class="form-control" id="validationCustom02" placeholder="Utility Bill"
-                            required>
+                        <input type="file" name="utility" class="form-control" id="validationCustom02" placeholder="Utility Bill"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -287,8 +288,8 @@
 
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Signature/Thumbprint[add the sign or thumbprint of client]</label>
-                        <input type="file" class="form-control" id="validationCustom02" placeholder="Signature or Thumbprint of Client"
-                            required>
+                        <input type="file" name="signature" class="form-control" id="validationCustom02" placeholder="Signature or Thumbprint of Client"
+                            >
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -297,17 +298,17 @@
                     <h4 class="header-title mt-0 mb-1">SMS / Email Subscription</h4>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Email Subscription</label>
-                        <select data-plugin="customselect" class="form-control" name="marital_status">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
+                        <select data-plugin="customselect" class="form-control" name="email_subscription">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select>
                     </div>
 
                     <div class="form-group mb-3">
                         <label for="validationCustom02">SMS Subscription</label>
-                        <select data-plugin="customselect" class="form-control" name="marital_status">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
+                        <select data-plugin="customselect" class="form-control" name="sms_subscription">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select>
                     </div>
 

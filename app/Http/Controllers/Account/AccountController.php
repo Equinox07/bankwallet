@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers\Account;
 
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use Keygen\Keygen;
+use App\Models\Account;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use App\Models\AccountType;
 
 class AccountController extends Controller
 {
+    public $accountType;
+    public function __constuct(AccountType $accountType)
+    {
+        $this->accountType = $accountType;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +48,23 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         $role = Role::findByName('Customer');
-        return $request;
+        $request['password'] = Hash::make(12345678);
+        $accountData = $request->only(['account_type_id', 'account_option_id']);
+        $customerData = $request->except(['account_type_id', 'account_option_id']);
+
+        $accNumber = $this->generateAccountNumber($request->account_type_id);
+
+        $customer = Customer::create($customerData);
+
+        $customerAcc = Account::create([
+            'user_id' => $customer->id,
+            'model' => 'Customer',
+            'account_number' => $accNumber,
+            'account_option_id' => $request->account_option_id,
+            'account_type_id' =>  $request->account_type_id,
+        ]);
+
+        return redirect()->intended('/dashboard');
     }
 
     /**
@@ -83,5 +110,17 @@ class AccountController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function generateAccountNumber($accountType)
+    {
+        $accGen = AccountType::find($accountType);
+
+        do {
+            $accountNumber = Keygen::numeric(11)->prefix($accGen->range)->generate();
+        } while (Account::where("account_number", $accountNumber)->count() > 0);
+
+        return $accountNumber;
     }
 }

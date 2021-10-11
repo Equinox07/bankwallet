@@ -38,6 +38,7 @@ class RoleSeederTable extends Seeder
             ['name' => 'Sales Executive'],
             ['name' => 'Mobile Money Agent'],
             ['name' => 'Auditor'],
+            ['name' => 'Customer'],
         ];
 
         foreach ($roles as $role) {

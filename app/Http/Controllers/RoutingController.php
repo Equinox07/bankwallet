@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\AccountType;
 use App\Models\Branch;
 use App\Models\Country;
+use App\Models\Currency;
 use App\Models\IdType;
 use App\Models\User;
 
@@ -37,7 +38,8 @@ class RoutingController extends Controller
         $countries = Country::all();
         $branches = Branch::all();
         $users = User::all();
-        return view('pages.accounts.open', compact('accountTypes', 'accountOptions', 'idTypes', 'countries', 'branches', 'users'));
+        $currencies = Currency::all();
+        return view('pages.accounts.open', compact('accountTypes', 'accountOptions', 'idTypes', 'countries', 'branches', 'users', 'currencies'));
     }
 
     /**
