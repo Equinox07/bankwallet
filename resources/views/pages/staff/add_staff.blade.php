@@ -19,11 +19,11 @@
         <nav aria-label="breadcrumb" class="float-right mt-1">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="">Account</a></li>
+                <li class="breadcrumb-item"><a href="">Staff</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Open</li>
             </ol>
         </nav>
-        <h4 class="mb-1 mt-0">Open Account</h4>
+        <h4 class="mb-1 mt-0">Add Staff</h4>
     </div>
 </div>
 @endsection
@@ -38,24 +38,16 @@
                 <p class="sub-header">Provide account details</p>
 
                     <div class="form-group mb-3">
-                        <label>Account Option</label>
-                        <select data-plugin="customselect" class="form-control" name="account_option_id">
-                            @foreach ($accountOptions as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom02">Account Type</label>
-                        <select data-plugin="customselect" class="form-control" name="account_option_id">
-                            @foreach ($accountTypes as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
+                        <label for="validationCustom01">Account Options</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Select Account Option"
+                        required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Client full name</label>
-                        <input type="text" name="name" class="form-control" id="validationCustom01" placeholder="Client full name"
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Client full name"
                         required>
                         <div class="valid-feedback">
                             Looks good!
@@ -63,21 +55,23 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Gender</label>
-                        <select data-plugin="customselect" class="form-control" name="gender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Gender"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Marital Status</label>
-                        <select data-plugin="customselect" class="form-control" name="marital_status">
-                            <option value="single">Single</option>
-                            <option value="married">Married</option>
-                        </select>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Marital Status"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Date of Birth</label>
-                        <input type="text" name="dob" class="form-control" id="validationCustom02" placeholder="Date of Birth"
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Date of Birth"
                             required>
                         <div class="valid-feedback">
                             Looks good!
@@ -85,7 +79,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Address</label>
-                        <input type="text" name="address" class="form-control" id="validationCustom02" placeholder="Address"
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Address"
                             required>
                         <div class="valid-feedback">
                             Looks good!
@@ -93,7 +87,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Cell Phone</label>
-                        <input type="text" name="phone" class="form-control" id="validationCustom02" placeholder="Cell Phone"
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Cell Phone"
                             required>
                         <div class="valid-feedback">
                             Looks good!
@@ -101,7 +95,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Email Address</label>
-                        <input type="text" name="email" class="form-control" id="validationCustom02" placeholder="Email"
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Cell Phone"
                             required>
                         <div class="valid-feedback">
                             Looks good!
@@ -109,68 +103,58 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Nationality</label>
-                        <select data-plugin="customselect" class="form-control" name="country_id">
-                            @foreach ($countries as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom02">ID Type</label>
-                        <select data-plugin="customselect" class="form-control" name="id_type_id">
-                            @foreach ($idTypes as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom02">ID Number</label>
-                        <input type="text" name="id_number" class="form-control" id="validationCustom02" placeholder="ID Number"
-                        required>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Nationality"
+                            required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom02">Client Tenant or Owner?</label> 
-                        <select data-plugin="customselect" class="form-control" name="occupany_type">
-                            <option value="tenant">Tenant</option>
-                            <option value="owner">Owner</option>
-                        </select>
-                    </div> 
+                        <label for="validationCustom02">Client Tenant or Owner?</label>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Client Tenant or Owner"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom02">Account Type</label>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Account Type"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
 
                     <h4 class="header-title mt-0 mb-1">Branch Information</h4>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Registering Branch</label>
-                        <select data-plugin="customselect" class="form-control" name="branch_id">
-                            @foreach ($branches as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Branch Information"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
 
 
                     <h4 class="header-title mt-0 mb-1">Client Relationship Officer</h4>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Registering Branch</label>
-                        <select data-plugin="customselect" class="form-control" name="client_relation_officer_id">
-                            
-                            @foreach ($users as $item)
-                            @if ($item->id > 2)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                                @endif
-                            @endforeach
-                        </select>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Client Relationship Officer"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
 
                     <h4 class="header-title mt-0 mb-1">Currency</h4>
                     <div class="form-group mb-3">
                         <label for="validationCustom02">Currency</label>
-                        <select data-plugin="customselect" class="form-control" name="currency_id">
-                            @foreach ($countries as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Currencys"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
 
             </div> <!-- end card-body-->
@@ -185,7 +169,7 @@
                 <p class="sub-header">Provide employment details</p>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Employer Name</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Employer name"
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Client full name"
                         required>
                         <div class="valid-feedback">
                             Looks good!
@@ -296,19 +280,12 @@
 
                     <h4 class="header-title mt-0 mb-1">SMS / Email Subscription</h4>
                     <div class="form-group mb-3">
-                        <label for="validationCustom02">Email Subscription</label>
-                        <select data-plugin="customselect" class="form-control" name="marital_status">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label for="validationCustom02">SMS Subscription</label>
-                        <select data-plugin="customselect" class="form-control" name="marital_status">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
+                        <label for="validationCustom02">National ID Card [Passport, Voter, NHIS, Ghana Card, Driving License]</label>
+                        <input type="file" class="form-control" id="validationCustom02" placeholder="National ID Card"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
 
                     <div class="form-group mb-3">

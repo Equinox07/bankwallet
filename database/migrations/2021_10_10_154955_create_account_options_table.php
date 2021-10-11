@@ -15,6 +15,8 @@ class CreateAccountOptionsTable extends Migration
     {
         Schema::create('account_options', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('type');
             $table->timestamps();
         });
     }

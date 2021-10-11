@@ -46,7 +46,7 @@ class IdTypeSeeder extends Seeder
 
 
         foreach ($users as $user) {
-            $user = IdType::firstOrCreate(
+            $user = IdType::updateOrCreate(
                 ['name' => $user['name']],
                 [
                     'name' => $user['name'],

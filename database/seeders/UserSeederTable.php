@@ -23,6 +23,7 @@ class UserSeederTable extends Seeder
                 "type" => "super-admin",
                 'email' => "super.admin@banky.com",
                 'password' => bcrypt('supersecret'),
+                'roles' => ['Super Admin']
             ],
             [
                 'name' => "Admin Banky",
@@ -30,6 +31,7 @@ class UserSeederTable extends Seeder
                 "type" => "admin",
                 'email' => "admin@banky.com",
                 'password' => bcrypt('adminsecret'),
+                'roles' => ['Admin']
 
             ],
             [
@@ -38,14 +40,30 @@ class UserSeederTable extends Seeder
                 "type" => "employee",
                 'email' => "employee@banky.com",
                 'password' => bcrypt('employeesecret'),
-
+                'roles' => ['Employee']
+            ],
+            [
+                'name' => "Cashier Employee",
+                "username" => "user-employee",
+                "type" => "cashier",
+                'email' => "cashier@banky.com",
+                'password' => bcrypt('employeesecret'),
+                'roles' => ['Cashier']
+            ],
+            [
+                'name' => "Teller Employee",
+                "username" => "teller-employee",
+                "type" => "teller",
+                'email' => "teller@banky.com",
+                'password' => bcrypt('employeesecret'),
+                'roles' => ['Teller']
             ],
 
         ];
 
 
         foreach ($users as $user) {
-            $user = User::firstOrCreate(
+            $u = User::firstOrCreate(
                 ['email' => $user['email']],
                 [
                     'name' => $user['name'],
@@ -55,6 +73,8 @@ class UserSeederTable extends Seeder
                     'password' => $user['password']
                 ]
             );
+
+            $u->syncRoles($user['roles']);
         }
     }
 }

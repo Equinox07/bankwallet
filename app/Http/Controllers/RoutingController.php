@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountOption;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\AccountType;
+use App\Models\Branch;
+use App\Models\Country;
+use App\Models\IdType;
+use App\Models\User;
 
 class RoutingController extends Controller
 {
@@ -25,7 +31,23 @@ class RoutingController extends Controller
      */
     public function openAccount()
     {
-        return view('pages.accounts.open');
+        $accountTypes = AccountType::all();
+        $accountOptions = AccountOption::all();
+        $idTypes = IdType::all();
+        $countries = Country::all();
+        $branches = Branch::all();
+        $users = User::all();
+        return view('pages.accounts.open', compact('accountTypes', 'accountOptions', 'idTypes', 'countries', 'branches', 'users'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addStaff()
+    {
+        return view('pages.staff.add_staff');
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Account\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 
@@ -24,6 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('pages-logout', [RoutingController::class,'logout']);
     Route::get('/', [RoutingController::class,'index']);
     Route::get('/account/open', [RoutingController::class,'openAccount']);
+    Route::post('/account/open', [AccountController::class,'store']);
+    Route::get('/staff/add', [RoutingController::class,'addStaff']);
     Route::get('{first}/{second}/{third}', [RoutingController::class,'thirdLevel']);
     Route::get('{first}/{second}', [RoutingController::class,'secondLevel']);
     Route::get('{any}', [RoutingController::class,'root']);

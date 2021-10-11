@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBranchesable extends Migration
+class CreateStaffDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateBranchesable extends Migration
      */
     public function up()
     {
-        Schema::create('branchesable', function (Blueprint $table) {
+        Schema::create('staff_details', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateBranchesable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('branchesable');
+        Schema::dropIfExists('staff_details');
     }
 }

@@ -23,6 +23,21 @@ class RoleSeederTable extends Seeder
             ['name' => 'Employee'],
             ['name' => 'Sub Admin'],
             ['name' => 'Finance'],
+            ['name' => 'Account Clerk'],
+            ['name' => 'Cashier'],
+            ['name' => 'Cleaner'],
+            ['name' => 'Customer Service'],
+            ['name' => 'Branch Manager'],
+            ['name' => 'Loan Officer'],
+            ['name' => 'Officer In Charge'],
+            ['name' => 'Operations Officer'],
+            ['name' => 'Mobile Banker'],
+            ['name' => 'Relationship Manager'],
+            ['name' => 'Retail Manager'],
+            ['name' => 'Teller'],
+            ['name' => 'Sales Executive'],
+            ['name' => 'Mobile Money Agent'],
+            ['name' => 'Auditor'],
         ];
 
         foreach ($roles as $role) {
@@ -32,16 +47,16 @@ class RoleSeederTable extends Seeder
             );
         }
 
-        $user1 = User::find(1);
-        $a = Role::findByName('Super Admin');
-        $user1->assignRole([$a->id]);
+        // $user1 = User::find(1);
+        // $a = Role::findByName('Super Admin');
+        // $user1->assignRole([$a->id]);
 
-        $user1 = User::find(2);
-        $b = Role::findByName('Admin');
-        $user1->assignRole([$b->id]);
+        // $user1 = User::find(2);
+        // $b = Role::findByName('Admin');
+        // $user1->assignRole([$b->id]);
 
-        $user1 = User::find(3);
-        $c = Role::findByName('Employee');
-        $user1->assignRole([$c->id]);
+        // $user1 = User::find(3);
+        // $c = Role::findByName('Employee');
+        // $user1->assignRole([$c->id]);
     }
 }
