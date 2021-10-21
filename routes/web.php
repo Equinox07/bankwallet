@@ -15,9 +15,9 @@ use App\Http\Controllers\RoutingController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/home', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
@@ -36,4 +36,4 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
